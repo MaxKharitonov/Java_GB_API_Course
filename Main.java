@@ -44,37 +44,37 @@ public class Shop {
     public static void main(String[] args) {
         Shop shop = new Shop();
 
-        // Создаем несколько ноутбуков
+        // РЎРѕР·РґР°РµРј РЅРµСЃРєРѕР»СЊРєРѕ РЅРѕСѓС‚Р±СѓРєРѕРІ
         Laptop laptop1 = new Laptop("Apple", "Silver", 2000);
         Laptop laptop2 = new Laptop("Dell", "Black", 1500);
         Laptop laptop3 = new Laptop("HP", "White", 1200);
         Laptop laptop4 = new Laptop("Lenovo", "Black", 1000);
 
-        // Добавляем ноутбуки в магазин
+        // Р”РѕР±Р°РІР»СЏРµРј РЅРѕСѓС‚Р±СѓРєРё РІ РјР°РіР°Р·РёРЅ
         shop.addLaptop(laptop1);
         shop.addLaptop(laptop2);
         shop.addLaptop(laptop3);
         shop.addLaptop(laptop4);
 
-        // Задаем критерии фильтрации
+        // Р—Р°РґР°РµРј РєСЂРёС‚РµСЂРёРё С„РёР»СЊС‚СЂР°С†РёРё
         Map<Integer, String> filterCriteria = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите цифру, соответствующую необходимому критерию:\n" +
-                "1 - бренд\n" +
-                "2 - цвет");
+        System.out.println("Р’РІРµРґРёС‚Рµ С†РёС„СЂСѓ, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РЅРµРѕР±С…РѕРґРёРјРѕРјСѓ РєСЂРёС‚РµСЂРёСЋ:\n" +
+                "1 - Р±СЂРµРЅРґ\n" +
+                "2 - С†РІРµС‚");
         int criterion = scanner.nextInt();
-        System.out.println("Введите минимальное значение для выбранного критерия:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РєСЂРёС‚РµСЂРёСЏ:");
         String value = scanner.next();
         filterCriteria.put(criterion, value);
         shop.setFilterCriteria(filterCriteria);
 
-        // Фильтруем ноутбуки и выводим результаты
+        // Р¤РёР»СЊС‚СЂСѓРµРј РЅРѕСѓС‚Р±СѓРєРё Рё РІС‹РІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚С‹
         Set<Laptop> filteredLaptops = shop.filterLaptops();
-        System.out.println("Найденные ноутбуки:");
+        System.out.println("РќР°Р№РґРµРЅРЅС‹Рµ РЅРѕСѓС‚Р±СѓРєРё:");
         for (Laptop laptop : filteredLaptops) {
-            System.out.println("Бренд: " + laptop.getBrand() +
-                    ", Цвет: " + laptop.getColor() +
-                    ", Цена: " + laptop.getPrice());
+            System.out.println("Р‘СЂРµРЅРґ: " + laptop.getBrand() +
+                    ", Р¦РІРµС‚: " + laptop.getColor() +
+                    ", Р¦РµРЅР°: " + laptop.getPrice());
         }
     }
 }
